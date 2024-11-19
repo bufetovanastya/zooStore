@@ -5,7 +5,6 @@ import 'package:flutter_grid_view/models/entity.dart';
 import 'package:flutter_grid_view/swiper.dart';
 import 'package:flutter_grid_view/video_player.dart';
 
-import 'cart_favorites.dart';
 
 class Cardofpet extends StatefulWidget {
   int index_Entity;
@@ -36,14 +35,14 @@ class _CardofpetState extends State<Cardofpet> {
           ),
           Container(
             margin: EdgeInsets.all(8),
-            child: Text('Имя питомца: ${entityList[index_Entity].name}', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),),
+            child: Text('Имя питомца: ${entityList[index_Entity].name}', style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),),
           ),
           Container(
             margin: EdgeInsets.all(8),
 
             child: Row(
               children: [
-                Text('Цена: ${entityList[index_Entity].cost}', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.green),),
+                Text('Цена: ${entityList[index_Entity].cost}', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.black),),
                 IconButton(onPressed: (){
                   if (_isFavorite == false) {
                     favorites.add(entityList[index_Entity]);
@@ -73,13 +72,12 @@ class _CardofpetState extends State<Cardofpet> {
                     IconButton(
                       icon: const Icon(
                         Icons.send,
-                        color: Colors.red,
+                        color: Colors.greenAccent,
                       ),
                       onPressed: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => HotBuy()));
                       },
                     ),
-                    Text("Hot buy!"),
                   ],
                 ),
               ],
@@ -100,7 +98,7 @@ class _CardofpetState extends State<Cardofpet> {
           ),
           Container(
             margin: EdgeInsets.all(8),
-            child: Text('Параметры:'),
+            child: Text('Доп. информация:'),
           ),
           Container(
 
